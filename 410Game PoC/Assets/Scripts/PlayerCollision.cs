@@ -6,12 +6,20 @@ using UnityEngine;
 public class PlayerCollision : MonoBehaviour
 
 {
+    public GameObject player;
+    public GameObject Angel;
     public GameObject gameoverscreen;
-    private void OnCollisionEnter(Collision collision)
+   
+
+    private void OnCollisionEnter(Collision other)
     {
-        if(collision.transform.tag == "Lava")
+        if(other.transform.tag == "Lava")
         {
             gameoverscreen.SetActive(true);
+        
+        }
+        if(other.transform.tag == "Angel"){
+            Destroy(other.gameObject);
         }
     }
 
