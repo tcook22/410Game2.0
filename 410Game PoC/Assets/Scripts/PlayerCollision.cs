@@ -15,7 +15,8 @@ public class PlayerCollision : MonoBehaviour
     {
         if(other.transform.tag == "Lava")
         {
-            gameoverscreen.SetActive(true);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //gameoverscreen.SetActive(true);
         
         }
         if(other.transform.tag == "Angel"){
@@ -25,6 +26,6 @@ public class PlayerCollision : MonoBehaviour
 
     public void ReplayLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+       // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
