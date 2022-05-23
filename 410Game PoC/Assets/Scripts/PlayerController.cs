@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene("LevelOver");
+            SceneManager.LoadScene("Level Select");
         }
 
             if (isGrounded)
