@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -50,7 +51,12 @@ public class PlayerController : MonoBehaviour
      void Update()
     {
 
-        if (isGrounded)
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("LevelOver");
+        }
+
+            if (isGrounded)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {

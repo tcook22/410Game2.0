@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerCollision : MonoBehaviour
 
@@ -18,6 +19,10 @@ public class PlayerCollision : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             //gameoverscreen.SetActive(true);
         
+        }
+        if(other.transform.tag == "Princess" || Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("LevelOver");
         }
         if(other.transform.tag == "Angel"){
             Destroy(other.gameObject);
