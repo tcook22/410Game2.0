@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     }
      void Jump()
     {
+        FindObjectOfType<AudioManager>().Play("Jump");
         rb.velocity = Vector3.up * jumpforce;
     }
 

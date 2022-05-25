@@ -14,9 +14,11 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        
         if(other.transform.tag == "Lava")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            
             //gameoverscreen.SetActive(true);
         
         }
