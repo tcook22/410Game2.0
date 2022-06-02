@@ -10,6 +10,7 @@ public class PlayerCollision : MonoBehaviour
     public GameObject player;
     public GameObject Angel;
     public GameObject gameoverscreen;
+    public GameObject Projectile;
    
 
     private void OnCollisionEnter(Collision other)
@@ -29,6 +30,23 @@ public class PlayerCollision : MonoBehaviour
         if(other.transform.tag == "Angel"){
             Destroy(other.gameObject);
         }
+        if(other.transform.tag == "Projectile"){
+            Destroy(other.gameObject);
+        }
+        if(other.transform.tag == "Shield"){
+            Destroy(other.gameObject);
+        }
+        if(other.transform.tag == "Transparent"){
+            Destroy(other.gameObject);
+        }
+        if(other.transform.tag == "Rocks")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            
+            //gameoverscreen.SetActive(true);
+        
+        }
+            
     }
 
     public void ReplayLevel()
