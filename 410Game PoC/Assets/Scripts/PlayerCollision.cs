@@ -31,14 +31,11 @@ public class PlayerCollision : MonoBehaviour
             Destroy(other.gameObject);
         }
         if(other.transform.tag == "Projectile"){
-            Destroy(other.gameObject);
+             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            
+            //gameoverscreen.SetActive(true);     
         }
-        if(other.transform.tag == "Shield"){
-            Destroy(other.gameObject);
-        }
-        if(other.transform.tag == "Transparent"){
-            Destroy(other.gameObject);
-        }
+       
         if(other.transform.tag == "Rocks")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
